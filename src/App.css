@@ -1,0 +1,56 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-light: #ffffff;
+  --background-dark: #121212;
+  --text-light: #333333;
+  --text-dark: #ffffff;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] {
+  --background-light: #121212;
+  --background-dark: #1e1e1e;
+  --text-light: #ffffff;
+  --text-dark: #cccccc;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: var(--text-light);
+  background-color: var(--background-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+main {
+  padding-top: 80px; /* Account for sticky navbar */
+}
+
+.animated-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animated-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
